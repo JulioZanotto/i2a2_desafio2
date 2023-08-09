@@ -14,7 +14,8 @@ def index():
             response = openai.Completion.create(
                 engine="davinci",
                 prompt=user_input,
-                max_tokens=50
+                max_tokens=50,
+                temperature=0.8
             )
             response_message = response.choices[0].text.strip()
 
