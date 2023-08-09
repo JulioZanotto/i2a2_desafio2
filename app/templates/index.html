@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OpenAI Chat App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>OpenAI Chat App</h1>
+        <form method="post">
+            <label for="user_input">Digite sua mensagem:</label>
+            <textarea id="user_input" name="user_input"></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+        {% if response_message %}
+        <div class="response">
+            <p><strong>Resposta:</strong></p>
+            <p>{{ response_message }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
