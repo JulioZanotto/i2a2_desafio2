@@ -16,7 +16,7 @@ def index():
         if user_input:
             conversation.append(f"User: {user_input}")
             response_message = generate_response("\n".join(conversation))
-            conversation.append(f"ElizaGPT: {response_message}")
+            conversation.append(f"{response_message}")
         else:
             response_message = ''
 
@@ -26,7 +26,7 @@ def generate_response(conversation):
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",  # Use o modelo de chat GPT-3.5 Turbo
         messages=[
-            {"role": "system", "content": "You are a helpful assistant."},
+            {"role": "system", "content": "You are a helpful assistant named ElizaGPT and will answer questions from patients."},
             {"role": "user", "content": conversation}
         ]
     )
