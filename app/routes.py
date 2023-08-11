@@ -25,6 +25,7 @@ def index():
 def generate_response(conversation):
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",  # Use o modelo de chat GPT-3.5 Turbo
+        temperature=0.7,
         messages=[
             {"role": "system", "content": "You are a helpful assistant named ElizaGPT and will answer questions from patients."},
             {"role": "user", "content": conversation}
